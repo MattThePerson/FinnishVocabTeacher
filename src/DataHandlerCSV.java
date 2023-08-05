@@ -19,7 +19,7 @@ public class DataHandlerCSV implements DataHandler {
     }
 
     @Override
-    public Boolean save(List<WordMetadata> words) throws Exception {
+    public Boolean saveToFile(List<WordMetadata> words) throws Exception {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
             bw.write(header);
@@ -39,7 +39,7 @@ public class DataHandlerCSV implements DataHandler {
     }
 
     @Override
-    public List<WordMetadata> loadWords() throws Exception
+    public List<WordMetadata> getWords() throws Exception
     {
         List<WordMetadata> words = new ArrayList<>();
         try {
@@ -64,5 +64,11 @@ public class DataHandlerCSV implements DataHandler {
     private String wordMetadataToString(WordMetadata wc) {
         String [] data = {"Juosta", "Liikkua jaloikka nopeasti", "Holkätä", "Run"};
         return String.join(",", data);
+    }
+
+    @Override
+    public void loadData() throws Exception {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'loadData'");
     }
 }
