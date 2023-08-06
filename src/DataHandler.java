@@ -6,6 +6,6 @@ import java.util.List;
 interface DataHandler {
     
     public void loadData() throws Exception;
-    public List<WordMetadata> getWords() throws Exception;
-    public Boolean saveToFile(List<WordMetadata> words) throws Exception;
+    public WordContainer getWords() throws Exception;
+    public Boolean saveToFile(List<Word> words) throws Exception;
 }

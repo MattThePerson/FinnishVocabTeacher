@@ -19,13 +19,13 @@ public class DataHandlerCSV implements DataHandler {
     }
 
     @Override
-    public Boolean saveToFile(List<WordMetadata> words) throws Exception {
+    public Boolean saveToFile(List<Word> words) throws Exception {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
             bw.write(header);
             bw.newLine();
-            for (WordMetadata wc : words) {
-                String line = wordMetadataToString(wc);
+            for (Word wc : words) {
+                String line = wordToString(wc);
                 bw.write(line);
                 bw.newLine();
             }
@@ -39,29 +39,29 @@ public class DataHandlerCSV implements DataHandler {
     }
 
     @Override
-    public List<WordMetadata> getWords() throws Exception
+    public WordContainer getWords() throws Exception
     {
-        List<WordMetadata> words = new ArrayList<>();
+        List<Word> words = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
             header = br.readLine();
             String line;
             while ( (line = br.readLine()) != null) {
-                words.add(stringToWordMetadata(line));
+                words.add(stringToWord(line));
             }
             br.close();
         } catch (Exception e) {
             return null;
         }
-        return words;
+        return new WordContainer(words);
     }
 
-    private WordMetadata stringToWordMetadata(String line) {
+    private Word stringToWord(String line) {
         String [] values = line.split(",");
-        return new WordMetadata();
+        return new Word();
     }
 
-    private String wordMetadataToString(WordMetadata wc) {
+    private String wordToString(Word wc) {
         String [] data = {"Juosta", "Liikkua jaloikka nopeasti", "Holkätä", "Run"};
         return String.join(",", data);
     }

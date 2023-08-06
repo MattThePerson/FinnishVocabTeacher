@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class FinnishVocabTeacherCLI {
     
-    private static String [] menuOptions = {"Save and Exit", "Exit without Saving", "Do daily practice", "Add word", "Do one random word",
-                                            ""};
+    private static String [] menuOptions = {"Save and Exit", "Exit without Saving", "Do daily practice", "Add word", "Do one random word", ""};
+    //private static FinnishVocabTeacher program;
     
     public FinnishVocabTeacherCLI() {
         //

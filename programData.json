@@ -1,12 +1,16 @@
 {
     "words": {
         "tuoli": {
-            "1": "juttu, jossa istutaan",
-            "2": "istuin, jakkara"
+            "finnishSynonyms": "istuin,jakkara",
+            "definition": "juttu, jossa istutaan"
+        },
+        "kahvi": {
+            "finnishSynonyms": "ilo,huume",
+            "definition": "hyvä juoma, jota kannattaa ottaa monta kertaa päivässä"
         },
         "talo": {
-            "1": "paikka, jossa asutaan",
-            "2": "koti, asunto"
+            "finnishSynonyms": "koti,asunto",
+            "definition": "paikka, jossa asutaan"
         }
     }
 }
